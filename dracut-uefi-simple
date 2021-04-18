@@ -38,5 +38,7 @@ for kernel in "${kernels[@]}"; do
     fi
 
     echo "Building linux image $kernel ($version)"
-    dracut -f -v --kver "${version}" ${current_img}
+    dracut -q -f -v --kver "${version}" ${current_img}
+    echo "Showing available EFI entries"
+    efibootmgr -v
 done
