@@ -10,7 +10,7 @@ depends=(dracut systemd)
 source=('90-dracut-uefi-install.hook'
         'dracut-uefi-simple')
 sha256sums=('292160c3feafcd882d6eb9dd2e20ce111997dc21336df204cee2965d69126701'
-            '72de67a4471525a7e7e8be310932280f11e3a4528765dfd3511e74fdd6947899')
+            'f40d53a786b8833e59e71e5bcdb57d6c6134137a6dfa7e0c521f9d3743cb3ff0')
 
 package() {
   install -Dm644 "${srcdir}/90-dracut-uefi-install.hook" "${pkgdir}/usr/share/libalpm/hooks/90-dracut-uefi-install.hook"

@@ -1,7 +1,8 @@
 #!/bin/bash -e
 esp_path="/efi/BOOT/Arch"
-current_img="linux-signed.efi"
-backup_img="linux-signed-bkp.efi"
+current_img="${esp_path}/linux-signed.efi"
+backup_img="${esp_path}/linux-signed-bkp.efi"
+#always force directory creation
 mkdir -p $esp_path
 
 kernels=()
@@ -31,9 +32,11 @@ for kernel in "${kernels[@]}"; do
 	version=$(basename "${path%/pkgbase}")
     read -r pkgbase < "$path"
 
-    echo "Backing up current image"
-    cp -f $esp_path/$current_img $esp_path/$backup_img
+    echo "Backing up current image(if it exists)"
+    if [[ -f ${current_img} ]]; then
+        cp -f ${current_img} ${backup_img}
+    fi
 
-    echo ":: Building linux image $kernel ($version)"
-    dracut -f -v --kver "${version}" $esp_path/$current_img
+    echo "Building linux image $kernel ($version)"
+    dracut -f -v --kver "${version}" ${current_img}
 done
