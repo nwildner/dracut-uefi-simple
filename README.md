@@ -1,0 +1,1 @@
+# dracut-uefi-simple
