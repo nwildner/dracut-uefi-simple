@@ -7,8 +7,10 @@
 
 What this hook does:
 
-- backs up `/efi/BOOT/Arch/linux-signed.efi` (if it exists) to `/efi/BOOT/Arch/linux-signed-bkp.efi`
-- generates a new image on  `/efi/BOOT/Arch/linux-signed.efi` 
+- backs up `/efi/BOOT/Arch/linux-signed.efi` (if it exists) to `/efi/BOOT/Arch/linux-signed-bkp.efi`.
+- generates a new image on  `/efi/BOOT/Arch/linux-signed.efi` .
+- prints the current EFI bootlist.
+- triggers image creation if any kernel/microcode/systemd related packages/paths are updated.
 
 What this hook doesn't do:
 
@@ -18,7 +20,7 @@ The hook itself is not intended to do secureboot kernel image signing like [sbup
 
 This hook will not handle `efibootmgr` tasks as well(see below).
 
-## Configure UEFI.
+## Dracut configuration.
 
 See my example [here](examples/etc/dracut.conf.d/uefi.conf)
 
