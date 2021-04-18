@@ -9,7 +9,7 @@ license=('MIT')
 depends=(dracut systemd)
 source=('90-dracut-uefi-install.hook'
         'dracut-uefi-simple')
-sha256sums=('292160c3feafcd882d6eb9dd2e20ce111997dc21336df204cee2965d69126701'
+sha256sums=('d71ac28d73220c5cb4b9d4761630a273c5e0d408a8cce96f83450e5af3180643'
             'f40d53a786b8833e59e71e5bcdb57d6c6134137a6dfa7e0c521f9d3743cb3ff0')
 
 package() {
