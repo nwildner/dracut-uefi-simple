@@ -16,9 +16,9 @@ What this hook doesn't do:
 
 The hook itself is not intended to do secureboot kernel image signing like [sbupdate](https://github.com/andreyv/sbupdate) neither I have the intention to make those distro-agnostic, configuration-oriented, etc. Some paths like `/efi/BOOT/Arch/` are fixed cause that's the standard i've adopted on my setups for the directories inside the `ESP`. Also, other distributions rely heavily on dracut to create inital ramdisks and most of those distro-specific scripts will make the dracut configuration example(below) error prone.
 
-[This is](https://nwildner.com/posts/2020-07-04-secure-your-boot-process/) the usecase for `dracut-efi-simple` since i'm trying to replace `sbupdate`+`mkinitcpio` with pure `dracut`. There is an ongoing discussion about [replacing mkinitcpio with Dracut](https://lists.archlinux.org/pipermail/arch-dev-public/2019-May/029570.html) on arch maillists.
+[This is](https://nwildner.com/posts/2020-07-04-secure-your-boot-process/) the usecase for `dracut-efi-simple` since i'm trying to replace `sbupdate`+`mkinitcpio` with pure `dracut`.
 
-This hook will not handle `efibootmgr` tasks as well(see below).
+This hook will not handle `efibootmgr` automatic EFI entry creation tasks as well(see below).
 
 ## Dracut configuration.
 
